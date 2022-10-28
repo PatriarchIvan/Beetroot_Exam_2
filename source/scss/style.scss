@@ -1,0 +1,49 @@
+@import 'reset', 'fonts', 'vars', 'slider__footer', 'slider__header';
+
+body {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    color: var(--body-font-color);
+}
+
+.header {
+    &__nav {
+        max-width: 1170px;
+        margin: 0 auto;
+        background: orange
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    &__items {
+        display: flex;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 10px;
+
+        & .svg {
+            width: 40px;
+            height: 40px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            border: 1px solid #fff;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+                stroke: #0b75d8;
+                border-color: #0b75d8;
+            }
+
+            &:last-of-type {
+                width: 40px;
+            }
+        }
+    }
+}
