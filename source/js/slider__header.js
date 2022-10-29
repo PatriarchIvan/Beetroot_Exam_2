@@ -3,10 +3,10 @@ const swiper = new Swiper('.header__swiper', {
   direction: 'vertical',
   loop: true,
   effect: 'fade',
+  slidesPerView: 1,
+  slidesPerGroup: 5,
   autoplay: {
     autoplay: true,
-    slidesPerView: 1,
-    slidesPerGroup: 1,
   },
   keyboard: {
     enabled: true,
@@ -14,7 +14,6 @@ const swiper = new Swiper('.header__swiper', {
   },
 
   pagination: {
-    enabled: true,
     el: '.swiper-pagination',
     type: 'bullets',
     clickable: true,

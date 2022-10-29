@@ -53,7 +53,7 @@
     }
 
     &.yellow::after {
-        background: linear-gradient(243.43deg, #eac808 16.9%, #a3e810 83.27%);
+        background: linear-gradient(243.43deg, #eac808 16.9%, #f8a521 83.27%);
     }
 
     &.purple::after {
@@ -70,18 +70,23 @@
 
 .swiper-pagination {
     position: absolute;
-    top: 0;
-    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    gap: 40px;
 }
 
 .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    background: #CAC2BA;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #fff;
     border-radius: 50%;
     font-size: 0;
 }
 
 .swiper-pagination-bullet-active {
-    background: #F16A50;
+    background: #fff;
 }
