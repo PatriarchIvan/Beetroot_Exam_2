@@ -75,10 +75,105 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
-  --body-font-color: #2C4058,
-  --body-font-size: 18px,
-  --title-font-size: 2.44rem,
+  --body-font-color: #2C4058;
+  --body-font-size: 18px;
+  --title-font-size: 2.44rem;
   --subtitle-font-size: 1.22rem;
+}
+
+:root {
+  --body-font-color: #2C4058;
+  --body-font-size: 18px;
+  --title-font-size: 2.44rem;
+  --subtitle-font-size: 1.22rem;
+}
+
+.header__swiper {
+  position: relative;
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  margin-bottom: 170px;
+}
+
+.swiper-slide .slide__text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 98px;
+  letter-spacing: 0.1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  color: #fff;
+}
+.swiper-slide .slide__text .title {
+  font-size: var(--title-font-size);
+}
+.swiper-slide .slide__text .subtitle {
+  margin-top: 80px;
+  line-height: 22px;
+}
+.swiper-slide::after {
+  content: " ";
+  background: -o-linear-gradient(206.57deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+  background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.swiper-slide.green::after {
+  background: -o-linear-gradient(206.57deg, #0d7a16 16.9%, #04ab44 100%);
+  background: linear-gradient(243.43deg, #0d7a16 16.9%, #04ab44 100%);
+}
+.swiper-slide.red::after {
+  background: -o-linear-gradient(206.57deg, #8f0f0d 16.9%, #df9b8c 100%);
+  background: linear-gradient(243.43deg, #8f0f0d 16.9%, #df9b8c 100%);
+}
+.swiper-slide.yellow::after {
+  background: -o-linear-gradient(206.57deg, #eac808 16.9%, #a3e810 83.27%);
+  background: linear-gradient(243.43deg, #eac808 16.9%, #a3e810 83.27%);
+}
+.swiper-slide.purple::after {
+  background: -o-linear-gradient(206.57deg, #320221 16.9%, #d20ccf 83.27%);
+  background: linear-gradient(243.43deg, #320221 16.9%, #d20ccf 83.27%);
+}
+
+.swiper-slide_picture {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.swiper-pagination {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background: #CAC2BA;
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background: #F16A50;
 }
 
 body {
@@ -88,9 +183,14 @@ body {
 }
 
 .header__nav {
+  position: absolute;
   max-width: 1170px;
-  margin: 0 auto;
-  background: orange;
+  width: 100%;
+  top: 50px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
 }
 
 .nav {
@@ -103,11 +203,46 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
 }
 .nav__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.313rem, -7.449rem + 16.17vw, 4.375rem);
+}
+.nav__items .nav____link {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.nav__items .nav____link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 9px;
+  height: 9px;
+}
+.nav__items .nav____link:hover {
+  text-decoration: underline;
+}
+.nav__items .nav____link:hover::before {
+  background: #fff;
 }
 .nav__socials {
   display: -webkit-box;
@@ -131,7 +266,4 @@ body {
           transform: scale(1.2);
   stroke: #0b75d8;
   border-color: #0b75d8;
-}
-.nav__socials .svg:last-of-type {
-  width: 40px;
 }
