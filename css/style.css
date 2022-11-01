@@ -238,7 +238,7 @@ body {
 
 .burger__mode {
   position: absolute;
-  top: 10px;
+  top: 70px;
   left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,11 +247,46 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 20px;
   width: 100%;
-  padding: 20px 30px;
-  background: #706060;
-  opacity: 0.5;
+  padding: 10px 30px;
+  background: rgba(211, 190, 190, 0.5);
+}
+.burger__mode .nav__items {
+  text-align: center;
+}
+.burger__mode .nav____link {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.burger__mode .nav____link::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  background: #fff;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 75%;
+  height: 1px;
+}
+.burger__mode .nav____link:hover {
+  color: #000;
+}
+.burger__mode .nav____link:hover::before {
+  background: rgb(152, 8, 8);
 }
 
 .nav {

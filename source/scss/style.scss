@@ -14,13 +14,13 @@ body {
         top: 50px;
         right: 50%;
         transform: translateX(50%);
-        padding: 10px; 
+        padding: 10px;
 
         & .nav__items {
             @media (max-width: 1070px) {
-                gap:30px;
+                gap: 30px;
             }
-    
+
             @media (max-width: 920px) {
                 position: absolute;
                 top: -200vh;
@@ -31,32 +31,65 @@ body {
 
 .burger__mode {
     position: absolute;
-    top: 10px;
+    top: 70px;
     left: 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     width: 100%;
-    padding: 20px 30px;
-    background: #706060 ; opacity: 0.5;   
+    padding: 10px 30px;
+    background: rgba(211, 190, 190, 0.5);
+
+    & .nav__items {
+        text-align: center;
+    }
+    & .nav____link {
+        position: relative;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.4s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            background: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+        }
+
+        &:hover {
+            color: #000;
+
+            &::before {
+                background: rgb(152, 8, 8);
+            }
+        }
+    }
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     &__items {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 70px;
-        
+
         .nav____link {
             position: relative;
             color: #fff;
             text-transform: uppercase;
             transition: all 0.5s ease;
+
             &::before {
                 content: '';
                 position: absolute;
@@ -68,6 +101,7 @@ body {
                 width: 9px;
                 height: 9px;
             }
+
             &:hover {
                 text-decoration: underline;
 
@@ -95,6 +129,7 @@ body {
                 stroke: #0b75d8;
                 border-color: #0b75d8;
             }
+
             &.svg__burger {
                 border: none;
                 margin-left: 10px;
@@ -102,7 +137,7 @@ body {
                 transition: all 0.3s ease;
 
                 @media (max-width: 920px) {
-                    visibility:visible;
+                    visibility: visible;
                 }
 
                 &:hover {
@@ -129,6 +164,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-in-out;
+
     &:hover {
         background: rgba(255, 255, 255, 0.248);
         cursor: pointer;
