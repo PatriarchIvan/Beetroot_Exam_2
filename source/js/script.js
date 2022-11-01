@@ -2,17 +2,10 @@
 window.addEventListener('DOMContentLoaded', () => {
     const burgerBtn = document.querySelector('.svg__burger');
     const burgerMenu = document.querySelector('.nav__items');
-    // burger init
-    // $(burgerMenu).addClass('burger__mode');
-    // $(burgerMenu).addClass('burger__mode');
 
-    $(burgerMenu).addClass('burger__mode');
-    
-    
     window.addEventListener('resize', () => {
-        if (document.documentElement.clientWidth <= 920) {
+        if (document.documentElement.clientWidth <= 800) {
             burgerBtn.classList.add('animate__animated', 'animate__bounceInDown');
-            $(burgerMenu).removeClass('nav__items');
             $(burgerMenu).hide();
         } else {
             burgerBtn.classList.remove('animate__animated', 'animate__bounceInDown');
@@ -24,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     $(burgerBtn).click(() => {
         $(burgerMenu).removeClass('nav__items');
+        $(burgerMenu).addClass('burger__mode');
         $(burgerMenu).addClass('animate__animated');
         $(burgerMenu).addClass('animate__backInLeft');
         $(burgerMenu).toggle();
