@@ -2,91 +2,109 @@
 
 .header__swiper {
     position: relative;
-    width: 100%;
-    max-height: 100vh;
-    overflow: hidden;
-    margin-bottom: 170px;
-}
+    
+    .swiper-wrapper {
+        max-height: 100vh;
+        margin-bottom: 170px;
+    }
 
-.swiper-slide {
+    .swiper-slide {
 
-    .slide__text {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 98px;
-        letter-spacing: 0.1em;
-        display: flex;
-        justify-content: center;
-        z-index: 2;
-        color: #fff;
+        .slide__text {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 98px;
+            letter-spacing: 0.1em;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            color: #fff;
+            @media (max-width: 1070px) {
+               justify-content: flex-start;
+               line-height: 60px;
+               padding: 5px;
+            }
 
-        & .title {
-            font-size: var(--title-font-size);
+            & .title {
+                font-weight: 700;
+                font-size: var(--title-font-size);
+                @media (max-width: 600px) {
+                    font-size: 1.7rem;
+                 }
+            }
+
+            & .subtitle {
+                margin-top: 80px;
+                line-height: 22px;
+                @media (max-width: 1070px) {
+                    margin-top: 100px;
+                 }
+            }
         }
 
-        & .subtitle {
-            margin-top: 80px;
-            line-height: 22px;  
+        &::after {
+            content: ' ';
+            background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+            opacity: 0.9;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+
+        &.green::after {
+            background: linear-gradient(243.43deg, #0d7a16 16.9%, #04ab44 100%);
+        }
+
+        &.red::after {
+            background: linear-gradient(243.43deg, #8f0f0d 16.9%, #df9b8c 100%);
+        }
+
+        &.yellow::after {
+            background: linear-gradient(243.43deg, #eac808 16.9%, #f8a521 83.27%);
+        }
+
+        &.purple::after {
+            background: linear-gradient(243.43deg, #320221 16.9%, #d20ccf 83.27%);
         }
     }
 
-    &::after {
-        content: ' ';
-        background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
-        opacity: 0.9;
+    .swiper-slide_picture {
+        object-fit: fill;
         width: 100%;
         height: 100%;
-        z-index: 1;
-        top: 0;
-        right: 0;
+        z-index: 0;
+    }
+
+    .swiper-pagination__header {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        gap: 40px;
     }
 
-    &.green::after {
-        background: linear-gradient(243.43deg, #0d7a16 16.9%, #04ab44 100%);
+    .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        font-size: 0;
+
+        &:hover {
+            cursor: pointer;
+            background: #ffffff4d;
+        }
     }
 
-    &.red::after {
-        background: linear-gradient(243.43deg, #8f0f0d 16.9%, #df9b8c 100%);
+    .swiper-pagination-bullet-active {
+        background: #fff;
     }
-
-    &.yellow::after {
-        background: linear-gradient(243.43deg, #eac808 16.9%, #f8a521 83.27%);
-    }
-
-    &.purple::after {
-        background: linear-gradient(243.43deg, #320221 16.9%, #d20ccf 83.27%);
-    }
-}
-
-.swiper-slide_picture {
-    object-fit: fill;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.swiper-pagination {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    gap: 40px;
-}
-
-.swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    font-size: 0;
-}
-
-.swiper-pagination-bullet-active {
-    background: #fff;
 }

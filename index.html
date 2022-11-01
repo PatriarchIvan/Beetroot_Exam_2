@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Monticello</title>
 </head>
@@ -49,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination">
+            <div class="swiper-pagination__header">
             </div>
         </div>
         <nav class="header__nav nav">
@@ -76,14 +77,14 @@
                     <svg class="svg">
                         <use xlink:href="./source/img/socials/sprites.svg#twitter"></use>
                     </svg>
-                    <svg class="svg">
-                        <use xlink:href="./source/img/socials/sprites.svg#instagram"></use>
-                    </svg>
-                    <button id="burger__menu">
+                    <a href="">
                         <svg class="svg">
-                            <use xlink:href="./source/img/socials/sprites.svg#burger"></use>
+                            <use xlink:href="./source/img/socials/sprites.svg#instagram"></use>
                         </svg>
-                    </button>
+                    </a>
+                    <svg class="svg svg__burger">
+                        <use xlink:href="./source/img/socials/sprites.svg#burger"></use>
+                    </svg>
                 </div>
             </div>
         </nav>
@@ -105,6 +106,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./source/js/script.js"></script>
     <script src="./source/js/slider__header.js"></script>
 </body>
 

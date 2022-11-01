@@ -14,7 +14,7 @@ const swiper = new Swiper('.header__swiper', {
   },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.swiper-pagination__header',
     type: 'bullets',
     clickable: true,
     renderBullet: function (index, className) {
@@ -22,12 +22,10 @@ const swiper = new Swiper('.header__swiper', {
     },
   },
 
-  on: {
-    init: function () {
-      console.log('swiper initialized');
-    },
-    // transitionEnd: function () {
-      // console.log(this.activeIndex);
+  // on: {
+  //   init: function () {
+  //     console.log('swiper initialized');
+  //   },
       // for(let i = this.activeIndex; i <= 6; i++) {
         
       // }
@@ -71,10 +69,10 @@ const swiper = new Swiper('.header__swiper', {
 
     //   }
     // },
-  }
+  // }
 
-});
+// });
 
 // document.querySelectorAll(".swiper-slide").forEach(function (d, i) {
 //   d.style.background = bgColor[i];
-// });
+});
