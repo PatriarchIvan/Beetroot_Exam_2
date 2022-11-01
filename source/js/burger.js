@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
         if (document.documentElement.clientWidth <= 800) {
+            $(burgerMenu).addClass('burger__mode');
             burgerBtn.classList.add('animate__animated', 'animate__bounceInDown');
             $(burgerMenu).hide();
         } else {

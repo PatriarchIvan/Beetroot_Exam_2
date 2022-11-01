@@ -23,8 +23,12 @@
             color: #fff;
             @media (max-width: 1070px) {
                justify-content: flex-start;
+                // max-width: 95%;
                line-height: 60px;
                padding: 5px;
+            }
+            @media (max-width: 500px) {
+               max-width: 90%;
             }
 
             & .title {
@@ -46,10 +50,6 @@
                 @media (max-width: 1070px) {
                     margin-top: 100px;
                 }
-                @media (max-width: 500px) {
-                    margin-top: 150px;
-                }
-                 
             }
         }
 
