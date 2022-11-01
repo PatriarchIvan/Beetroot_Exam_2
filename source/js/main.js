@@ -1,7 +1,8 @@
 'use strict';
 const btnDown = document.querySelector('.btn__scroll');
 const leftImg = document.querySelector('.product__bg.img');
-console.log(leftImg);
+const btnShow = document.querySelector('.text__btn');
+// console.log(leftImg);
 
 btnDown.addEventListener('click', () => {
     window.scrollTo({
@@ -10,18 +11,18 @@ btnDown.addEventListener('click', () => {
     });    
 });
 
-window.addEventListener('scroll', () => {
-    console.log(window.pageYOffset);
-    swipeLeftImg(); 
-}, {once : true});
+btnShow.addEventListener('click', () => {
+    leftImg.classList.toggle('animate__left');
+    setTimeout(() => {
+        leftImg.classList.toggle('animate__right');
+        console.log('right');
+    }, 5000),
+    //  setTimeout(() => {
+    //     leftImg.classList.toggle('animate__left');
+    //     leftImg.classList.toggle('animate__right');
+    //     console.log('left' + `${date.getSeconds - (new Date().getSeconds())} sc`);
+    // }, 10010);
+   
 
-const swipeLeftImg = () => {
-    if (window.pageYOffset >= 900 && window.pageYOffset <= 1005) {
-        console.log(window.pageYOffset);
-        leftImg.classList.add('.animate__left');
-    } 
-    // else if (window.pageYOffset <= 1000) {
-    //     console.log(window.pageYOffset);
-    // }
-};
+});
 

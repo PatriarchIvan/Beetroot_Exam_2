@@ -3,19 +3,17 @@
         transform: translateX(0) translateY(0);
     }
 
-    25% {
-        transform: translateX(50px) translateY(15px);
+    100% {
+        transform: translateX(215px) translateY(60px);
     }
+}
 
-    50% {
-        transform: translateX(120px) translateY(30px);
-    }
-
-    75% {
-        transform: translateX(175px) translateY(45px);
+@keyframes slide-left {
+    0% {
+        transform: translateX(215px) translateY(60px);
     }
 
     100% {
-        transform: translateX(215px) translateY(60px);
+        transform: translateX(0) translateY(0);
     }
 }
