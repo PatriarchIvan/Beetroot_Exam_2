@@ -66,7 +66,7 @@ body {
         .product {
             display: flex;
             padding-bottom: 140px;
-            gap: 20%;
+            gap: 18%;
             position: relative;
 
             &__bg {
@@ -108,17 +108,44 @@ body {
                 }
             }
             &__text {
-                min-width: 470px;
-                padding: 13% 10% 2% 3%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: start;
+                width: 80%;
 
                 .text__suptitle {
                     font-family: var(--body-font-family);
+                    line-height: 26.82px;
+                    margin-bottom: 5px;
                 }
                 
                 .text__title {
-                    font-size: var(--subtitle-font-size);
-                    padding: 0;
+                    font-size: var(--title-font-size);
+                    margin-bottom: 20px;
                 }
+
+                .text__text {
+                    font-family: 'Open Sans', sans-serif;
+                    line-height: 30px;
+                }
+
+                .text__text_hidden {
+                    visibility: hidden;
+                    height: 0%;
+                    transition: all 0.9s ease;
+                    margin-top: 10px;
+                    margin-bottom: 40px;
+                }
+
+                .text__btn_left {
+                    margin-bottom: 60px;
+                }
+
+                // .text__text_visible {
+                //     visibility: visible;
+                //     height: 50%;
+                // };
 
             }
 
@@ -311,16 +338,20 @@ body {
 }
 
 .animate__left {
-    animation: slide-right 5s alternate 
+    animation: slide-right 4s alternate 
 }
 
 .animate__right {
-    animation: slide-left 5s alternate 
+    animation: slide-left 4s alternate 
 }
 
 .btn {
-    min-width: 190px;
-    min-height: 60px;
+    max-width: 190px;
+    max-height: 60px;
     padding: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px 40px;
+    font-family: var(--body-font-family);
     border: 1px var(--body-font-color) solid;
 }
