@@ -17,3 +17,23 @@
         transform: translateX(0) translateY(0);
     }
 }
+
+@keyframes slide-right-reversed {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-20%) translateY(15%);
+    }
+}
+
+@keyframes slide-left-reversed {
+    0% {
+        transform: translateX(-20%) translateY(15%);
+    }
+    
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
