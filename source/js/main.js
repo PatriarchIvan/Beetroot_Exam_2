@@ -7,6 +7,16 @@ const btnShowRight = document.querySelector('.text__btn_right');
 const hiddenTextLeft = document.querySelector('.text__text_hidden');
 const hiddenTextRight = document.querySelector('.text__text_hidden-reversed');
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 btnDown.addEventListener('click', () => {
     window.scrollTo({
         top: 900,
@@ -46,5 +56,4 @@ btnShowRight.addEventListener('click', () => {
             rightImg.classList.toggle('animate__right_reversed');
         }, 4000);
     }
-
 });

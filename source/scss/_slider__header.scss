@@ -16,14 +16,12 @@
             top: 50%;
             transform: translateY(-50%);
             line-height: 98px;
-            letter-spacing: 0.1em;
             display: flex;
             justify-content: center;
             z-index: 2;
             color: #fff;
             @media (max-width: 1070px) {
                justify-content: flex-start;
-                // max-width: 95%;
                line-height: 60px;
                padding: 5px;
             }
