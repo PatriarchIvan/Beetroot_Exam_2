@@ -1,4 +1,4 @@
-@import 'reset', 'mixins', 'fonts', 'vars',  'slider__news', 'slider__header', 'keyframes';
+@import 'reset', 'mixins', 'fonts', 'vars', 'slider__news', 'slider__header', 'keyframes';
 
 body {
     font-family: var(--body-font-family);
@@ -35,32 +35,8 @@ body {
 }
 
 .main {
-    // max-width: 1600px;
-    // margin: 0 auto;
-    // width: 100%;
-
     .products {
         overflow-x: hidden;
-        &__title {
-            position: relative;
-            text-align: center;
-            padding: 30px 0;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-size: var(--subtitle-font-size);
-            margin-bottom: 90px;
-
-            &::after {
-                content: '';
-                background: var(--body-font-color);
-                height: 1px;
-                position: absolute;
-                top: 0;
-                width: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
 
         .product {
             display: flex;
@@ -82,15 +58,18 @@ body {
                     max-width: 585px;
                     width: 50%;
                     max-height: 470px;
+
                     @media (max-width: 800px) {
                         order: 1;
                     }
 
                     &.img {
                         max-width: 50%;
+
                         &:hover {
                             cursor: pointer;
                         }
+
                         &__picture {
                             object-fit: cover;
                             width: 50%;
@@ -126,13 +105,16 @@ body {
                 max-width: 585px;
                 max-height: 470px;
                 transition: transform .5s ease;
+
                 @media (max-width: 800px) {
                     order: 1;
                 }
+
                 &.img {
                     &:hover {
                         cursor: pointer;
                     }
+
                     &__picture {
                         object-fit: cover;
                         width: 100%;
@@ -217,13 +199,13 @@ body {
         position: relative;
         z-index: 0;
         width: 100%;
-        height: 100vh;
-        margin: 0 auto 70px auto;
+        height: 100%;
+        margin-bottom: 150px;
         background-image: url("../source/img/main/news_bg.png");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-        
+
         &__title {
             position: relative;
             text-align: center;
@@ -245,7 +227,52 @@ body {
             }
         }
     }
+
+    .gallery {
+        position: relative;
+        margin-bottom: 150px;
+        .wrapper {
+            max-width: 1170px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .gallery__item {
+            width: 100%;
+            height: 100%;
+            transition: all 0.7s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.02);
+                filter: brightness(1.1);
+            }
+
+            &.big {
+                grid-area: span 2 / span 2;
+            }
+        }
+
+        &__btn {
+            position: absolute;
+            left: 50%;
+            bottom: -100px;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+
+            &:hover {
+               transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+    }
+   
 }
+
 
 .burger__mode {
     position: absolute;
@@ -462,5 +489,26 @@ body {
     &:hover {
         background: #E5E5E5;
         transform: scale(1.1);
+    }
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--subtitle-font-size);
+    margin-bottom: 90px;
+
+    &::after {
+        content: '';
+        background: var(--body-font-color);
+        height: 1px;
+        position: absolute;
+        top: 0;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

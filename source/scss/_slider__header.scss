@@ -29,7 +29,7 @@
                max-width: 90%;
             }
 
-            & .title {
+            &_title {
                 font-weight: 700;
                 font-size: var(--title-font-size);
                 @media (max-width: 600px) {
