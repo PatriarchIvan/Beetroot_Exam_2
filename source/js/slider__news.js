@@ -10,9 +10,22 @@ $(document).ready(function () {
     speed: 300,
     prevArrow:"<button type='button' class='slick-prev'><</button>",
     nextArrow:"<button type='button' class='slick-next'>></button>",
-    breakpoint: 1448,
-      settings: {
-        arrows: false,
+    responsive: [
+      {
+        breakpoint: 1170,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },        
+      },
+
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+        }
       }
+    ]
   });
 });

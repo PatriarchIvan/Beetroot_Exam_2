@@ -5,6 +5,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: home, 
         zoom: 16,
+        disableDefaultUI: true,
         styles: [
             {
               "elementType": "geometry",

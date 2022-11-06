@@ -1,6 +1,6 @@
 @import 'reset', 'mixins', 'fonts', 'vars', 'slider__news', 'map', 'slider__header', 'keyframes';
 
-body {
+body, html {
     font-family: var(--body-font-family);
     font-size: var(--body-font-size);
     color: var(--body-font-color);
@@ -92,8 +92,8 @@ body {
 
                 & .text__text_hidden-reversed {
                     visibility: hidden;
-                    height: 0%;
-                    transition: all 0.9s ease;
+                    height: 1px;
+                    transition: all 1.0s ease;
                     margin-top: 10px;
                     margin-bottom: 40px;
                 }
@@ -157,7 +157,7 @@ body {
                 .text__text_hidden {
                     visibility: hidden;
                     height: 1px;
-                    transition: all 0.9s ease;
+                    transition: all 1.0s ease;
                     margin-top: 10px;
                     margin-bottom: 40px;
                 }
@@ -231,6 +231,7 @@ body {
     .gallery {
         position: relative;
         margin-bottom: 150px;
+
         .wrapper {
             max-width: 1170px;
             width: 100%;
@@ -265,12 +266,12 @@ body {
             transition: all 0.3s ease;
 
             &:hover {
-               transform: translateX(-50%) scale(1.1);
+                transform: translateX(-50%) scale(1.1);
             }
         }
 
     }
-   
+
 }
 
 
@@ -391,6 +392,10 @@ body {
         display: flex;
         gap: 10px;
 
+        &_footer {
+            align-self: flex-start;
+        }
+
         @media (max-width: 430px) {
             gap: 2px
         }
@@ -409,7 +414,6 @@ body {
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
-                stroke: #0b75d8;
             }
 
             &.svg__burger {
@@ -427,8 +431,8 @@ body {
                 }
 
                 &:hover {
-                    stroke: #0b75d8;
-                    transform: scale(1.2);
+                    transform: scale(1.1);
+                    background: #7E5AFF;
                 }
             }
         }
@@ -510,5 +514,104 @@ body {
         width: 100px;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    @media (max-width: 800px) {
+        margin-bottom: 25px;
+    }
+}
+
+.form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -300px;
+    width: 770px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px 70px 60px 60px;
+    z-index: 2;
+    transition: all 0.3s ease;
+
+    &__title {
+        margin: 30px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 280px;
+
+        a,span {
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 50px;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        max-width: 280px;
+        gap: 30px;
+
+        .name,
+        .mail {
+            width: 100%;
+            font-size: 18px;
+            font-family: var(--body-font-family);
+            padding: 5px 5px 10px 5px;
+            border-bottom: 1px solid #4B5562;
+
+            &::placeholder {
+                color: #4B5562;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus,
+            &:active {
+                color: #000;
+                border-bottom: 1px solid #000;
+                background: #ffffff3f;
+            }
+        }
+    }
+
+}
+
+.footer {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background: linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+
+    &__nav {
+        max-width: 770px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 200px 10px 190px;
+    }
+
+    .nav__logo_footer {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__copy {
+        color: #fff;
+        font-size: 14px;
+        font-family: var(--body-font-family);
     }
 }

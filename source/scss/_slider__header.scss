@@ -6,6 +6,14 @@
     .swiper-wrapper {
         max-height: 100vh;
         margin-bottom: 170px;
+
+        @media (max-width: 800px) {
+            margin-bottom: 70px;
+        }
+
+        @media (max-width: 500px) {
+            margin-bottom: 25px;
+        }
     }
 
     .swiper-slide {
