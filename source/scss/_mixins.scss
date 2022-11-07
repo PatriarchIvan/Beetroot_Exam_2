@@ -1,7 +1,3 @@
-// @mixin createDot {
-    
-// }
-
 @mixin createLine {
     &::after {
         content: '';
