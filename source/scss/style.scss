@@ -526,7 +526,8 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     top: -300px;
-    width: 770px;
+    max-width: 770px;
+    width: 100%;
     margin: 0 auto;
     background: #fff;
     padding: 50px 70px 60px 60px;
@@ -542,6 +543,11 @@ body, html {
         flex-direction: column;
         gap: 25px;
         max-width: 280px;
+
+        .adress::before {
+            content: '';
+            
+        }
 
         a,span {
             color: #000;

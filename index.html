@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="icon" type="image/x-icon" href="./source/img/favicon.png">
     <script src="./source/js/map.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Monticello</title>
@@ -73,17 +74,17 @@
             </div>
             <div class="nav__socials">
                 <div class="nav__socials socials">
-                    <a href="#">
+                    <a href="https://www.facebook.com/">
                         <svg class="svg">
                             <use xlink:href="./source/img/socials/sprites.svg#facebook"></use>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://www.twitter.com/">
                         <svg class="svg">
                             <use xlink:href="./source/img/socials/sprites.svg#twitter"></use>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://www.instagram.com/">
                         <svg class="svg">
                             <use xlink:href="./source/img/socials/sprites.svg#instagram"></use>
                         </svg>
@@ -100,7 +101,7 @@
         <section class="products">
             <h2 class="products__title title">What we do</h2>
             <div class="product">
-                <div class="product__bg" id="about">
+                <div class="product__bg" id="proj">
                     <div class="product__bg img">
                         <img src="./source/img/main/product_1.png" alt="product" class="img__picture">
                     </div>
@@ -130,13 +131,13 @@
                     <h3 class="product__text text__title">COMMERCE CENTRE</h3>
                     <p class="product__text text__text">Successful businesses have many things in common, today we’ll
                         look at the big ‘R’ of recognition and how a digital advertising network may help.
-                        <p class="product__text text__text text__text_hidden-reversed">Lorem ipsum dolor sit amet
-                            consectetur adipisicing
-                            elit. Dolor nostrum, quo alias mollitia, quae nemo animi praesentium voluptas in dignissimos
-                            ullam sunt! Dicta voluptas soluta tenetur voluptates ipsum voluptatum magni, ipsa illo unde
-                            at itaque maiores nulla, vel nemo dolorem odio placeat quia! Optio facere sed consectetur
-                            reprehenderit totam placeat.</p>
                     </p>
+                    <p class="product__text text__text text__text_hidden-reversed">Lorem ipsum dolor sit amet
+                        consectetur adipisicing
+                        elit. Dolor nostrum, quo alias mollitia, quae nemo animi praesentium voluptas in dignissimos
+                        ullam sunt! Dicta voluptas soluta tenetur voluptates ipsum voluptatum magni, ipsa illo unde
+                        at itaque maiores nulla, vel nemo dolorem odio placeat quia! Optio facere sed consectetur
+                        reprehenderit totam placeat.</p>
                     <button class="product__text text__btn_right btn">More details</button><span
                         class="product__text text__span">Hong Kong - 1588 feet</span>
                 </div>
@@ -206,7 +207,7 @@
                                         class="author__photo photo">
                                 </div>
                                 <div class="author__info">
-                                    <h class="author__name">ALICE WARD</h>
+                                    <span class="author__name">ALICE WARD</span>
                                     <span class="author__date">30 Nov 2019</span>
                                 </div>
                             </div>
@@ -261,7 +262,7 @@
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="about">
             <h2 class="gallery__title title">GALLERY</h2>
             <div class="wrapper">
                 <div class="gallery__item big"><img src="./source/img/main/gallery_1.png" alt="galleryPicture"
@@ -287,17 +288,17 @@
                 </div>
                 <div class="nav__socials nav__socials_footer">
                     <div class="nav__socials socials">
-                        <a href="#">
+                        <a href="https://www.facebook.com/">
                             <svg class="svg">
                                 <use xlink:href="./source/img/socials/sprites.svg#facebook"></use>
                             </svg>
                         </a>
-                        <a href="#">
+                        <a href="https://www.twitter.com/">
                             <svg class="svg">
                                 <use xlink:href="./source/img/socials/sprites.svg#twitter"></use>
                             </svg>
                         </a>
-                        <a href="#">
+                        <a href="https://www.instagram.com/">
                             <svg class="svg">
                                 <use xlink:href="./source/img/socials/sprites.svg#instagram"></use>
                             </svg>
@@ -309,10 +310,10 @@
                 <h2 class="form__title title">Get in touch</h2>
                 <div class="form__wrapper">
                     <ul class="form__list">
-                        <li><a href="#">91 Nolan Extensions Suite 670</a></li>
-                        <li><a href="tel:+001356-868-2454">+001 356-868-2454</a></li>
-                        <li><a href="mailto:montichello@service.com">montichello@service.com</a></li>
-                        <li><span>From 07:05AM to 19:30PM</span></li>
+                        <li><a href="#" class="adress">91 Nolan Extensions Suite 670</a></li>
+                        <li><a href="tel:+001356-868-2454" class="tel">+001 356-868-2454</a></li>
+                        <li><a href="mailto:montichello@service.com" class="email">montichello@service.com</a></li>
+                        <li><span class="hours">From 07:05AM to 19:30PM</span></li>
                     </ul>
                     <div class="form__input">
                         <input type="text" placeholder='Enter name' class="name" name="name" required>
@@ -327,7 +328,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJow_fwcYcBi6YeqtbHBSytSd1dWEa4Nk&callback=initMap"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJow_fwcYcBi6YeqtbHBSytSd1dWEa4Nk&callback=initMap">
+    </script>
     <script src="./source/js/main.js"></script>
     <script src="./source/js/burger.js"></script>
     <script src="./source/js/slider__header.js"></script>
