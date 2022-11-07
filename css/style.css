@@ -570,7 +570,8 @@ h1, h2, h3, h4, h5, h6 {
             transform: translateX(0) translateY(0);
   }
 }
-body, html {
+body,
+html {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   color: var(--body-font-color);
@@ -1177,6 +1178,18 @@ body, html {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+@media (max-width: 800px) {
+  .form {
+    max-width: 600px;
+    padding: 30px 50px 40px 40px;
+  }
+}
+@media (max-width: 500px) {
+  .form {
+    max-width: 320px;
+    padding: 15px 35px 15px 15px;
+  }
+}
 .form__title {
   margin: 30px;
 }
@@ -1194,10 +1207,18 @@ body, html {
 .form__list .adress::before {
   content: "";
 }
-.form__list a, .form__list span {
+.form__list a,
+.form__list span {
   color: #000;
 }
-.form__list a:hover, .form__list span:hover {
+@media (max-width: 500px) {
+  .form__list a,
+.form__list span {
+    font-size: 12px;
+  }
+}
+.form__list a:hover,
+.form__list span:hover {
   text-decoration: underline;
 }
 .form__wrapper {
@@ -1205,6 +1226,11 @@ body, html {
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
+}
+@media (max-width: 500px) {
+  .form__wrapper {
+    gap: 10px;
+  }
 }
 .form__input {
   display: -webkit-box;
@@ -1224,6 +1250,12 @@ body, html {
   font-family: var(--body-font-family);
   padding: 5px 5px 10px 5px;
   border-bottom: 1px solid #4B5562;
+}
+@media (max-width: 500px) {
+  .form__input .name,
+.form__input .mail {
+    font-size: 14px;
+  }
 }
 .form__input .name::-webkit-input-placeholder, .form__input .mail::-webkit-input-placeholder {
   color: #4B5562;

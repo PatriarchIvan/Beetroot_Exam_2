@@ -1,6 +1,7 @@
 @import 'reset', 'mixins', 'fonts', 'vars', 'slider__news', 'map', 'slider__header', 'keyframes';
 
-body, html {
+body,
+html {
     font-family: var(--body-font-family);
     font-size: var(--body-font-size);
     color: var(--body-font-color);
@@ -534,6 +535,16 @@ body, html {
     z-index: 2;
     transition: all 0.3s ease;
 
+    @media (max-width: 800px) {
+        max-width: 600px;
+        padding: 30px 50px 40px 40px;
+    }
+
+    @media (max-width: 500px) {
+        max-width: 320px;
+        padding: 15px 35px 15px 15px;
+    }
+
     &__title {
         margin: 30px;
     }
@@ -546,11 +557,15 @@ body, html {
 
         .adress::before {
             content: '';
-            
         }
 
-        a,span {
+        a,
+        span {
             color: #000;
+
+            @media (max-width: 500px) {
+                font-size: 12px;
+            }
 
             &:hover {
                 text-decoration: underline;
@@ -561,6 +576,10 @@ body, html {
     &__wrapper {
         display: flex;
         gap: 50px;
+
+        @media (max-width: 500px) {
+            gap: 10px;
+        }
     }
 
     &__input {
@@ -576,6 +595,11 @@ body, html {
             font-family: var(--body-font-family);
             padding: 5px 5px 10px 5px;
             border-bottom: 1px solid #4B5562;
+
+
+            @media (max-width: 500px) {
+                font-size: 14px;
+            }
 
             &::placeholder {
                 color: #4B5562;
