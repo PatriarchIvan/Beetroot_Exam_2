@@ -881,6 +881,11 @@ html {
       -ms-transform: translateX(-50%) scale(1.1);
           transform: translateX(-50%) scale(1.1);
 }
+@media (max-width: 800px) {
+  .main .gallery {
+    margin-bottom: 120px;
+  }
+}
 
 .burger__mode {
   position: absolute;
