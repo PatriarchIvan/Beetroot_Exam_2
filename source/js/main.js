@@ -1,4 +1,5 @@
 'use strict';
+window.addEventListener('DOMContentLoaded', () => {
 const btnDown = document.querySelector('.btn__scroll');
 const leftImg = document.querySelector('.product__bg.img');
 const rightImg = document.querySelector('.product__bg.img_reversed');
@@ -13,21 +14,6 @@ const userMail = document.querySelector('.mail');
 const form = document.querySelector('.form');
 const btnSend = document.querySelector('.form__btn');
 
-
-function createImage(parent, src) {
-    const newImg = document.createElement('div');
-    for (let i = 1; i <= 5; i++) {
-        newImg.classList.add('gallery__item', 'big');
-        newImg.innerHTML = `
-        <img src="${src}" alt="galleryPicture"
-         class="gallery__item picture">`;
-        parent.appendChild(newImg);
-    }
-}
-
-function removeImage(parent) {
-    parent.removeChild(parent.lastChild);
-}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -48,12 +34,17 @@ document.querySelector('.map').addEventListener('mouseout', () => {
 });
 
 btnSend.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.localStorage.setItem('name', userName.value);
-    window.localStorage.setItem('mail', userMail.value);
-    alert(`Hello ${window.localStorage.getItem('name')}!We will contact your email ${window.localStorage.getItem('mail')} soon!`);
+    if (!userName.value || !userMail.value){
+        alert('Enter correct data...');
+        return;
+    } else {
+        e.preventDefault();
+        window.localStorage.setItem('name', userName.value);
+        window.localStorage.setItem('mail', userMail.value);
+        alert(`Hello ${window.localStorage.getItem('name')}!We will mail you by ${window.localStorage.getItem('mail')} soon!`);
+        form.reset();
+    }
 });
-
 
 btnDown.addEventListener('click', () => {
     window.scrollTo({
@@ -63,37 +54,15 @@ btnDown.addEventListener('click', () => {
 });
 
 btnShowLeft.addEventListener('click', () => {
-    hiddenTextLeft.style.visibility = 'visible';
-    hiddenTextLeft.style.height = 'inherit';
-    hiddenTextLeft.classList.add('animate__animated', 'animate__bounceInRight');
-    btnShowLeft.classList.add('animate__animated', 'animate__bounceOutRight');
-    setTimeout(() => {
-        btnShowLeft.style.display = 'none';
-    }, 1000);
-
-    if (document.documentElement.clientWidth >= 800) {
-        leftImg.classList.toggle('animate__left');
-        setTimeout(() => {
-            leftImg.classList.toggle('animate__right');
-        }, 4000);
-    }
+    animateText(hiddenTextLeft, 'left');
+    animateImg(leftImg);
+    hideBtn(btnShowLeft);
 });
 
 btnShowRight.addEventListener('click', () => {
-    hiddenTextRight.style.visibility = 'visible';
-    hiddenTextRight.style.height = 'inherit';
-    hiddenTextRight.classList.add('animate__animated', 'animate__bounceInRight');
-    btnShowRight.classList.add('animate__animated', 'animate__bounceOutLeft');
-    setTimeout(() => {
-        btnShowRight.style.display = 'none';
-    }, 1000);
-
-    if (document.documentElement.clientWidth >= 800) {
-        rightImg.classList.toggle('animate__left_reversed');
-        setTimeout(() => {
-            rightImg.classList.toggle('animate__right_reversed');
-        }, 4000);
-    }
+    animateText(hiddenTextRight, 'right');
+    animateImg(rightImg);
+    hideBtn(btnShowRight);
 });
 
 btnShowGallery.addEventListener('click', () => {
@@ -113,14 +82,57 @@ btnShowGallery.addEventListener('click', () => {
     }
 
 }, );
-// function validateForm(form, prop) {
-//     console.log(form);
-//     console.log(form.input.name);
-//     console.log(prop.value);
-// }
+function animateImg(img) {
+    if (document.documentElement.clientWidth >= 800) {
+        if(img === rightImg) {
+            img.classList.toggle('animate__left_reversed');
+            setTimeout(() => {
+                img.classList.toggle('animate__right_reversed');
+            }, 4000);
+        } else {
+            img.classList.toggle('animate__left');
+            setTimeout(() => {
+                img.classList.toggle('animate__right');
+            }, 4000);
+        }
+    }
+}
 
-// function rememberUser(name, mail) {
-//     window.localStorage.setItem('name', name.value);
-//     window.localStorage.setItem('mail', mail.value);
-//     
-// }
+function animateText(text, direction) {
+    text.style.visibility = 'visible';
+    text.style.height = 'inherit';
+    if (direction === 'right') {
+        text.classList.add('animate__animated', 'animate__bounceInLeft');
+    } else if (direction === 'left'){
+        text.classList.add('animate__animated', 'animate__bounceInRight');
+    }
+}
+
+function hideBtn(btn) {
+    if (btn == btnShowRight) {
+        btn.classList.add('animate__animated', 'animate__bounceOutLeft');
+    } else {
+        btn.classList.add('animate__animated', 'animate__bounceOutRight');
+    }
+    setTimeout(() => {
+        $(btn).toggle('slow');
+    }, 1500);
+    
+}
+
+function createImage(parent, src) {
+    const newImg = document.createElement('div');
+    for (let i = 1; i <= 5; i++) {
+        newImg.classList.add('gallery__item', 'big');
+        newImg.innerHTML = `
+        <img src="${src}" alt="galleryPicture"
+         class="gallery__item picture">`;
+        parent.appendChild(newImg);
+    }
+}
+
+function removeImage(parent) {
+    parent.removeChild(parent.lastChild);
+}
+
+});

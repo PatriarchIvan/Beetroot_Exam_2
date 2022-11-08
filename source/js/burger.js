@@ -3,6 +3,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const burgerBtn = document.querySelector('.svg__burger');
     const burgerMenu = document.querySelector('.nav__items');
 
+    if (document.documentElement.clientWidth <= 800) {
+        $(burgerMenu).addClass('burger__mode');
+        burgerBtn.classList.add('animate__animated', 'animate__bounceInDown');
+        $(burgerMenu).hide();
+    }
+
     window.addEventListener('resize', () => {
         if (document.documentElement.clientWidth <= 800) {
             $(burgerMenu).addClass('burger__mode');
